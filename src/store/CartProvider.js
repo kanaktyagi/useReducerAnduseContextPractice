@@ -13,15 +13,18 @@
         const existingCartItemIndex = state.items.findIndex(item => item.id === action.item.id);
         const existingCartItem = state.items[existingCartItemIndex];
         let updatedItems;
+        let updatedItem
         if(existingCartItem){
-          const updatedItem ={
+           updatedItem ={
               ...existingCartItem,
               amount: existingCartItem.amount + action.item.amount
+            
           }
+          console.log("updatedItem",updatedItem)
           updatedItems = [...state.items]
-          console.log("updatedItems", updatedItems)
+          console.log("updatedItems of adding again", updatedItems)
           updatedItems[existingCartItemIndex] = updatedItem;
-          console.log("  const updatedItem = state.items.concat(action.item);", updatedItems[existingCartItemIndex] )
+          console.log("  const updatedItem", updatedItems[existingCartItemIndex] )
         }
      else{
          updatedItems = state.items.concat(action.item);
