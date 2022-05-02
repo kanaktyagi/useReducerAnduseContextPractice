@@ -10,7 +10,7 @@ function AvailableMeals() {
   useEffect(()=> {
     const fetchMeals = async () => {
      
-     const response = await fetch('https://practice-http-pizza-site-default-rtdb.firebaseio.com/meals.jso')
+     const response = await fetch('https://practice-http-pizza-site-default-rtdb.firebaseio.com/meals.json')
      if(!response.ok){
        throw new Error ('Something went wrong');
      }
